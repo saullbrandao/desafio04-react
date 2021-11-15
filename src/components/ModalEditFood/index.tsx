@@ -24,7 +24,7 @@ type FormData = {
 type ModalEditFoodProps = {
   isOpen: boolean
   setIsOpen: () => void
-  handleUpdateFood: (data: FormData) => void
+  handleUpdateFood: (data: FormData) => Promise<void>
   editingFood: FoodType
 }
 
