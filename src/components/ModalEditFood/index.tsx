@@ -5,26 +5,12 @@ import { Form } from './styles'
 import Modal from '../Modal'
 import Input from '../Input'
 import { FormHandles } from '@unform/core'
-
-type FoodType = {
-  id: number
-  name: string
-  description: string
-  price: number
-  available: boolean
-  image: string
-}
-type FormData = {
-  image: string
-  name: string
-  description: string
-  price: string
-}
+import { FoodFormData, FoodType } from '../../types'
 
 type ModalEditFoodProps = {
   isOpen: boolean
   setIsOpen: () => void
-  handleUpdateFood: (data: FormData) => Promise<void>
+  handleUpdateFood: (data: FoodFormData) => Promise<void>
   editingFood: FoodType
 }
 
@@ -36,7 +22,7 @@ const ModalEditFood = ({
 }: ModalEditFoodProps) => {
   const formRef = useRef<FormHandles>(null)
 
-  const handleSubmit = async (data: FormData) => {
+  const handleSubmit = async (data: FoodFormData) => {
     handleUpdateFood(data)
     setIsOpen()
   }

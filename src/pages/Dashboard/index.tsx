@@ -6,21 +6,7 @@ import Food from '../../components/Food'
 import ModalAddFood from '../../components/ModalAddFood'
 import ModalEditFood from '../../components/ModalEditFood'
 import { FoodsContainer } from './styles'
-
-type FoodType = {
-  id: number
-  name: string
-  description: string
-  price: number
-  available: boolean
-  image: string
-}
-type FoodFormData = {
-  image: string
-  name: string
-  description: string
-  price: string
-}
+import { FoodFormData, FoodType } from '../../types'
 
 const Dashboard = () => {
   const [modalOpen, setModalOpen] = useState(false)
